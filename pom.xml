@@ -14,6 +14,25 @@
   <build>
     <plugins>
      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.3.2</version>
+            <configuration>
+                <!-- Spécifiez la version source de votre code -->
+                <source>11</source>
+                <!-- Désactivez doclint pour éviter les avertissements sur la documentation -->
+                <doclint>none</doclint>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>attach-javadocs</id>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                </execution>
+            </executions>
+     </plugin>
+     <plugin>
        <groupId>org.apache.maven.plugins</groupId>
        <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
@@ -28,7 +47,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>HelloJava</mainClass>
+              <mainClass>TP2</mainClass>
             </manifest>
           </archive>
         </configuration>
